@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Navbar from './components/Navbar';
-import LocalProducts from './pages/LocalProducts';
-import AlibabaProducts from './pages/AlibabaProducts';
-import ProductDetail from './pages/ProductDetail';
-import BoutiquePage from './pages/BoutiqueScreen';
-import BoutiqueDetail from './pages/BoutiqueDetail';
+import Navbar from './components/Navbar.jsx';
+import LocalProducts from './pages/LocalProducts.jsx';
+import AlibabaProducts from './pages/AlibabaProducts.jsx';
+import ProductDetail from './pages/ProductDetail.jsx';
+import BoutiquePage from './pages/BoutiqueScreen.jsx';
+import BoutiqueDetail from './pages/BoutiqueDetail.jsx';
 
 function App() {
   return (

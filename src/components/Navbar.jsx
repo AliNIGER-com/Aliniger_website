@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import styles from './Navbar.css';
+import './Navbar.css';
 import { FaBars, FaTimes, FaStore } from 'react-icons/fa';
 
 const Navbar = () => {
@@ -10,23 +10,23 @@ const Navbar = () => {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <nav className={styles.navbar}>
-      <div className={styles.logo}>
+    <nav className="navbar">
+      <div className="logo">
         <span>
-          Ali<span className={styles.niger}>Niger</span>
+          Ali<span className="niger">Niger</span>
         </span>
       </div>
 
-      <div className={styles.burger} onClick={toggleMenu}>
+      <div className="burger" onClick={toggleMenu}>
         {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
       </div>
 
-      <ul className={`${styles.navLinks} ${menuOpen ? styles.navActive : ''}`}>
+      <ul className={`navLinks${menuOpen ? ' navActive' : ''}`}>
         <li>
           <NavLink
             to="/local"
             onClick={closeMenu}
-            className={({ isActive }) => (isActive ? styles.active : '')}
+            className={({ isActive }) => (isActive ? 'active' : '')}
           >
             Produits Locaux
           </NavLink>
@@ -35,16 +35,16 @@ const Navbar = () => {
           <NavLink
             to="/alibaba"
             onClick={closeMenu}
-            className={({ isActive }) => (isActive ? styles.active : '')}
+            className={({ isActive }) => (isActive ? 'active' : '')}
           >
             Produits Alibaba
           </NavLink>
         </li>
         <li>
           <NavLink
-            to="/boutique"
+            to="/boutiques"
             onClick={closeMenu}
-            className={({ isActive }) => (isActive ? styles.active : '')}
+            className={({ isActive }) => (isActive ? 'active' : '')}
           >
             <FaStore style={{ marginRight: '6px' }} />
             Boutique
