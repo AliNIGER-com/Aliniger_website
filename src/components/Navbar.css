@@ -1,0 +1,128 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fef8f0;
+  padding: 14px 24px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+  color: #333;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 24px;
+}
+
+.navLinks li a {
+  display: flex; /* pour aligner icône + texte */
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.navLinks li a svg {
+  margin-right: 6px; /* espace entre icône et texte */
+  flex-shrink: 0;
+  color: #333;
+  transition: color 0.2s ease;
+}
+
+.navLinks li a:hover,
+.navLinks li a:focus {
+  background-color: rgba(46, 139, 87, 0.1);
+  color: #2E8B57;
+}
+
+.navLinks li a:hover svg,
+.navLinks li a:focus svg {
+  color: #2E8B57;
+}
+
+.active {
+  color: #2E8B57;
+  font-weight: bold;
+  border-bottom: 2px solid #2E8B57;
+}
+
+.profileIcon {
+  color: #333;
+  transition: color 0.2s ease;
+}
+
+.profileIcon:hover {
+  color: #2E8B57;
+}
+
+/* Responsive pour mobile */
+@media screen and (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
+  .navLinks {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: #fff8f0;
+    padding: 20px 0;
+    transform: translateY(-200%);
+    transition: transform 0.3s ease-in-out;
+    border-bottom: 1px solid #ccc;
+    z-index: 999;
+  }
+
+  .navActive {
+    transform: translateY(0);
+  }
+
+  .navLinks li {
+    margin-bottom: 12px;
+  }
+
+  .navLinks li:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Agrandir un peu les zones cliquables sur mobile */
+  .navLinks li a {
+    padding: 12px 20px;
+    font-size: 18px;
+  }
+
+}
+
+  .logo {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espace entre logo et texte */
+  font-size: 24px;
+  font-weight: bold;
+  color: #2E8B57;
+  padding-left: 12px;
+}
+
+.logoImage {
+  width: 40px;  /* Ajuste la taille du logo */
+  height: 40px;
+  object-fit: contain;
+}
+
+.niger {
+  color: #FF8C00;
+}
