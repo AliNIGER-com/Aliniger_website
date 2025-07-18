@@ -52,16 +52,17 @@ const LocalProducts = () => {
           <h2 className={styles.categoryTitle}>{categorie}</h2>
           <div className={styles.productsGrid}>
             {produits.map((prod) => (
-              <Link
-                key={prod.id}
-                to={`/product/local/${prod.id}`}
-                className={styles.productCard}
-                title={`Voir détails de ${prod.nom}`}
-              >
-                <img src={prod.image} alt={prod.nom} className={styles.productImage} />
-                <h3 className={styles.productName}>{prod.nom}</h3>
-                <p className={styles.productPrice}>{prod.prix.toLocaleString()} FCFA</p>
-              </Link>
+<Link
+  key={prod.id}
+  to={`/produit/${prod.id}`}
+  className={styles.productCard}
+  title={`Voir détails de ${prod.nom}`}
+>
+  <img src={prod.image} alt={prod.nom} className={styles.productImage} />
+  <h3 className={styles.productName}>{prod.nom}</h3>
+  <p className={styles.productPrice}>{prod.prix.toLocaleString()} FCFA</p>
+</Link>
+
             ))}
           </div>
         </section>

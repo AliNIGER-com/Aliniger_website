@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar.jsx';
 import LocalProducts from './pages/LocalProducts.jsx';
 import AlibabaProducts from './pages/AlibabaProducts.jsx';
-import ProductDetail from './pages/ProductDetail.jsx';
-import BoutiquePage from './pages/BoutiqueScreen.jsx';
-import BoutiqueDetail from './pages/BoutiqueDetail.jsx';
+import ProductDetails from './pages/ProductDetails.jsx';
+import AlibabaProductDetailsScreen from './pages/AlibabaProductDetailsScreen.jsx';
+import AlibabaPaiement from './pages/AlibabaPaiement.jsx';
 
 function App() {
   return (
@@ -16,9 +16,9 @@ function App() {
         <Route path="/" element={<LocalProducts />} />
         <Route path="/local" element={<LocalProducts />} />
         <Route path="/alibaba" element={<AlibabaProducts />} />
-        <Route path="/product/:type/:id" element={<ProductDetail />} />
-        <Route path="/boutiques" element={<BoutiquePage />} />
-        <Route path="/boutique/:id" element={<BoutiqueDetail />} />
+        <Route path="/product/:type/:id" element={<ProductDetails />} />
+        <Route path="/alibaba/product/:id" element={<AlibabaProductDetailsScreen />} />
+        <Route path="/paiement" element={<AlibabaPaiement />} />
       </Routes>
     </Router>
   );

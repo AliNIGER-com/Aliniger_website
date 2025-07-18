@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './AlibabaProducts.module.css';
-import api from '../api/api'; // Assure-toi que le chemin est correct
+import api from '../api/api';
+import { Link } from 'react-router-dom';
 
 const AlibabaProducts = () => {
   const [products, setProducts] = useState([]);
@@ -29,13 +30,8 @@ const AlibabaProducts = () => {
     product.nom.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  if (loading) {
-    return <p className={styles.loading}>Chargement des produits...</p>;
-  }
-
-  if (error) {
-    return <p className={styles.error}>{error}</p>;
-  }
+  if (loading) return <p className={styles.loading}>Chargement des produits...</p>;
+  if (error) return <p className={styles.error}>{error}</p>;
 
   return (
     <div className={styles.container}>
@@ -50,30 +46,26 @@ const AlibabaProducts = () => {
         />
       </header>
 
-      <div className={styles.grid}>
-        {filteredProducts.length > 0 ? (
-          filteredProducts.map((product) => (
-            <div className={styles.card} key={product.id}>
-              <img src={product.image} alt={product.nom} className={styles.image} />
-              <h3 className={styles.name}>{product.nom}</h3>
-              <p className={styles.price}>{product.prix}</p>
-              <a
-                href={`https://wa.me/22788123456?text=Bonjour,%20je%20souhaite%20commander%20le%20produit%20suivant%20:%20${encodeURIComponent(
-                  product.nom
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.button}
-              >
-                Commander sur WhatsApp
-              </a>
-            </div>
-          ))
-        ) : (
-          <p className={styles.noResult}>Aucun produit trouvé.</p>
-        )}
+<div className={styles.grid}>
+  {filteredProducts.length > 0 ? (
+    filteredProducts.map((product) => (
+      <div className={styles.card} key={product.id}>
+        <img src={product.image} alt={product.nom} className={styles.image} />
+        <h3 className={styles.name}>{product.nom}</h3>
+        <p className={styles.price}>{product.prix.toLocaleString()} FCFA</p>
+        <Link
+          to={`/produit/${product.id}`}
+          className={styles.button}
+        >
+          Voir le produit
+        </Link>
       </div>
-    </div>
+    ))
+  ) : (
+    <p className={styles.noResult}>Aucun produit trouvé.</p>
+  )}
+</div>
+</div>
   );
 };
 
