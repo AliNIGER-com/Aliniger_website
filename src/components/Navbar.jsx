@@ -40,6 +40,16 @@ const Navbar = () => {
             Produits Alibaba
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            to="/boutiques"
+            onClick={closeMenu}
+            className={({ isActive }) => (isActive ? 'active' : '')}
+          >
+            <FaStore style={{ marginRight: '6px' }} />
+            Boutique
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );

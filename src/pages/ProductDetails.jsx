@@ -36,7 +36,7 @@ Mode de paiement : Paiement à l’arrivée.
 
 Merci de confirmer les modalités de livraison.`;
 
-      const url = `https://wa.me/22777444748?text=${encodeURIComponent(message)}`;
+      const url = `https://wa.me/22777474448?text=${encodeURIComponent(message)}`;
       window.open(url, '_blank');
     } else {
       alert(`Redirection vers la page de paiement (${modePaiement})`);

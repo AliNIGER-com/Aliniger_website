@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://alinigermiddle-production.up.railway.app/api';
-const BASE_IMAGE_URL = 'https://alinigermiddle-production.up.railway.app/media/';
+const BASE_URL = 'https://api.aliniger.com/api';
+const BASE_IMAGE_URL = 'https://api.aliniger.com/media/';
 
 const api = axios.create({
   baseURL: BASE_URL,
@@ -27,7 +27,6 @@ export const fetchVendeurById = (id) => api.get(`/vendeurs/${id}`);
 /* ========== BOUTIQUES ========== */
 export const fetchBoutiques = () => api.get('/boutiques');
 export const fetchBoutiqueDetail = (id) => api.get(`/boutiques/${id}`);
-
 export const searchBoutiques = (searchData) => api.post('/boutiques/search', searchData);
 export const filterBoutiques = (filterData) => api.post('/boutiques/filter', filterData);
 export const trackBoutiqueView = (boutiqueId, userId) =>
@@ -90,9 +89,7 @@ export const generateReferralLink = (userId) =>
 
 /* ========== PAIEMENTS ========== */
 export const getPaiementConfig = () => api.get('/config/paiement');
-
 export const createPaiement = (paiementData) => api.post('/paiements', paiementData);
-
 export const validatePayment = (paymentData) =>
   api.post('/admin/validate-payment', paymentData);
 
@@ -111,7 +108,6 @@ export const shareOrder = (shareData) => api.post('/orders/share', shareData);
 
 /* ========== MÉDIAS / IMAGES ========== */
 export const fetchAllImages = () => api.get('/images');
-
 export const getImageUrl = (filename) => `${BASE_IMAGE_URL}${filename}`;
 
 /* ========== EXPORT GLOBAL ========== */
